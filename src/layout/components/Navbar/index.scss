@@ -1,0 +1,66 @@
+.g-navbar {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px $--border-color-lighter;
+  z-index: 1001;
+
+  .hamburger-container {
+    line-height: 46px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.025);
+    }
+  }
+
+  .breadcrumb-container {
+    float: left;
+  }
+
+  .right-menu {
+    float: right;
+    height: 100%;
+    line-height: 50px;
+
+    &:focus {
+      outline: none;
+    }
+
+    .right-menu-item {
+      display: inline-block;
+      padding: 0 10px;
+      height: 100%;
+      cursor: pointer;
+      &:hover {
+        background-color: #f6f6f6;
+      }
+    }
+
+    .avatar-container {
+      .avatar-wrapper {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .user-avatar {
+          width: 32px;
+          height: 32px;
+        }
+
+        .user-name {
+          margin-left: 5px;
+        }
+
+        .el-icon-caret-bottom {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

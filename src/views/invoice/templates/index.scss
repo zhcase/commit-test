@@ -1,0 +1,170 @@
+/**
+这个是发票管理的统一通用样式，所有的页面、组件、模板样式都放在这里
+**/
+
+.app-container {
+  height: 805px;
+}
+.detail-content {
+  display: flex;
+  height: 720px;
+  .detail-invoice-preview {
+    display: flex;
+    flex-direction: column;
+    width: 804px;
+    height: 550px;
+    .change-invoice {
+      align-self: center;
+      position: relative;
+      top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90px;
+      padding: 10px 14px;
+      color: #409EFF;
+      font-weight: bold;
+      font-size: 15px;
+      background: #E3F1FF;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  .detail-invoice-image {
+    height: 510px;
+    // border: 1px solid #777777;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .detail-invoice-form {
+    flex: 1;
+    .template-content {
+      display: flex;
+      flex-direction: column;
+      height: 680px;
+      overflow: hidden;
+      overflow-y: auto;
+      .template-btn-content {
+        position: absolute;
+        bottom: 20px;
+        right: 50px;
+      }
+      /deep/.el-divider--horizontal {
+        margin: 12px 0 20px 0;
+      }
+      .item-content {
+        margin: 0px 15px 0px 15px;
+        /deep/.el-input {
+          width: 213px;
+        }
+        /deep/.el-form-item__label {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+          margin-right: 10px;
+          font-size: 16px;
+          color: #666;
+        }
+        /deep/.el-input__inner {
+          color: #333;
+          font-size: 16px;
+        }
+        /deep/.invoice-form {
+          margin-top: 10px;
+          margin-bottom: 0px;
+          display: flex;
+          flex-wrap: wrap;
+          .el-col{
+            min-height: 52px;
+          }
+        }
+        /deep/.invoice-buy-form{
+          flex-direction: column;
+          .el-col{
+            width: 100%;
+          }
+        }
+        .invoice-item-title {
+          font-size: 16px;
+          background: linear-gradient(90deg, #7bd0f7, #11adf1);
+          color: #fff;
+          padding: 3px 10px;
+          display: inline;
+        }
+        .item-content-sku-item {
+          display: flex;
+          flex-direction: column;
+        }
+        .sku-add-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          padding: 8px 0;
+          color: #409EFF;
+          font-size: 15px;
+          background: #E3F1FF;
+          border: 1px solid #409EFF;
+          border-radius: 5px;
+          cursor: pointer;
+          .sku-add-btn_image {
+            margin-right: 11px;
+          }
+        }
+        .invoice-delete-icon {
+          cursor: pointer;
+          color: #F56C6C;
+          &:hover {
+            color: #f35959;
+          }
+        }
+      }
+      .template-btn-content {
+        /deep/.el-button--primary {
+          background-color: #409EFF;
+          border: none;
+        }
+      }
+    }
+  }
+}
+.el-image.invoice-action_image {
+  width: 48px;
+  height: 16px;
+  float: right;
+  margin-right: -48px;
+  position: relative;
+  left: -48px;
+  /* opacity: 0.01; */
+  z-index: 2;
+  /deep/.el-image__inner {
+    opacity: 0;
+  }
+}
+
+.scroll-style::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 7px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+
+.scroll-style::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 7px;
+  background-color: rgba(144, 147, 153, 0.3);
+}
+
+.scroll-style::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 7px #ebecee;
+  background: #ebecee;
+  border-radius: 7px;
+}
+
+/deep/.el-table__fixed::before {
+  background: none;
+}
+/deep/.el-table__fixed-right::before {
+  background: none;
+}

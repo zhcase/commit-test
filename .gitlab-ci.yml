@@ -1,0 +1,17 @@
+stages:
+    - deploy
+    
+job_deploy:
+    script:
+        - git checkout dev-sz
+        - git pull origin dev-sz
+        - rm -rf dist
+        - cnpm i webpack@4.29.5 --force
+        - cnpm install
+        - npm run build:prod
+        - sudo rm -rf /usr/share/nginx/DailyOffice/*
+        - sudo cp -r dist/ /usr/share/nginx/DailyOffice/
+        - sudo cp -r /usr/share/nginx/DailyOffice/dist/MicroAppDailyOffice/* /usr/share/nginx/DailyOffice/dist
+    stage: deploy
+    only: 
+        - dev-sz

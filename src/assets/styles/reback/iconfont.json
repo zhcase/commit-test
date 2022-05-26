@@ -1,0 +1,23 @@
+{
+  "id": "2446523",
+  "name": "vue",
+  "font_family": "iconfont",
+  "css_prefix_text": "el-icon-vue-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9438977",
+      "name": "取消置顶",
+      "font_class": "unSet",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "9922611",
+      "name": "撤回",
+      "font_class": "reback",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    }
+  ]
+}

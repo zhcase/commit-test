@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <form>
+        <div id="form">
+            <input />
+            <br>
+        </div>
+    </form>
+    <button onclick="addInput()">添加</button>
+    <button onclick="submit()">提交</button>
+
+</body>
+<script>
+    function addInput() {
+        let br = document.createElement('br');
+        let div = document.getElementById('form');
+        div.appendChild(br);
+        //添加一个input标签，并且换行
+        let label = document.createElement('label');
+        let input = document.createElement('input');
+        input.setAttribute('class', 'input_class');
+        input.setAttribute('type', 'input');
+        input.setAttribute('name', 'name');
+        label.setAttribute('for', '时段')
+        label.innerHTML = '时段1'
+        //input.setAttribute('value',code);
+        div.appendChild(label);
+        div.appendChild(input);
+        div.appendChild(br);
+
+    }
+
+    function submit() {
+        let dom = document.getElementsByClassName('input_class');
+        console.log(dom);
+        for (let i = 0; i < dom.length; i++) {
+            console.log(dom[i].value);
+        }
+    }
+</script>
+
+</html>

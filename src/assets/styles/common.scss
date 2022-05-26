@@ -1,0 +1,13 @@
+.c-multiFieldBox-root {
+  .c-multiFieldBox-root__label {
+    font-weight: bold;
+  }
+  .c-multiFieldBox-root__content {
+    display: flex;
+    flex: 1;
+  }
+}
+.c-fieldBox-content {}
+.c-multiFieldBox-child {
+  width: 100%;
+}

@@ -1,0 +1,651 @@
+// el-tabs 全局样式修改
+.tabs {
+  .el-tabs--card>.el-tabs__header .el-tabs__nav {
+    border: unset !important;
+  }
+
+  .el-tabs__item {
+    font-size: 14px !important;
+    color: #333 !important;
+  }
+
+  .el-tabs--card>.el-tabs__header {
+    border-bottom-color: #409EFF;
+  }
+
+  .el-tabs--card>.el-tabs__header {
+    background-color: #F0F0F0 !important;
+  }
+
+  .el-tabs__item.is-active {
+    color: #409EFF !important;
+    background-color: #FFFFFF;
+    border-bottom: unset;
+    border-right: 1px solid #409EFF !important;
+    border-left: 1px solid #409EFF !important;
+    border-top: 1px solid #409EFF !important;
+  }
+}
+// el-menu  全局样式修改 (给对应的文件中的el-mune  加上mune class 类名)
+.mune {
+  // border-right: unset !important;
+   height: 800px;
+
+  .el-menu {
+    // border-right: unset !important;sssss
+    height: 100%;
+
+  }
+  .el-submenu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border-bottom: 1px solid #D9EBFF;
+}
+  .el-menu-item {
+    // border-bottom: 1px solid #D9EBFF;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+  }
+
+  .el-menu-item-group {
+    border-bottom: 0.5px solid #D9EBFF;
+  }
+
+  .el-menu-item-group__title {
+    // border-bottom: 1px solid #D9EBFF;
+    padding: 0px;
+  }
+
+  .el-menu-item.is-active {
+    color: #409EFF;
+    background-color: #E3F1FF;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+  }
+}
+
+// 新增弹框 (单列显示)
+// .aaa {
+.el-dialog {
+  width: 600px !important;
+  padding: 30px !important;
+  margin-bottom: 64px !important;
+  .el-dialog__header {
+    padding: 0px !important;
+    padding-bottom: 30px !important;
+
+  }
+
+  .el-dialog__title {
+    font-size: 18px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #333333;
+
+  }
+
+  .el-dialog__body {
+    padding: 0px;
+
+  }
+
+  .el-dialog__footer {
+    padding: 0px;
+  }
+
+  .el-form-item {
+    margin-bottom: 20px;
+
+    .el-form-item__label:before {
+      // content: '*';
+      // color: #F56C6C;
+      // margin-right: 1px !important;
+    }
+
+    // .el-form>>>.line-feed.el-form-item .el-form-item__label {
+
+    //   /* 调节对齐即可，不一定是这个高度*/
+    //   }
+
+    .el-form-item__label {
+      max-width: 76px;
+      padding: 0px;
+      font-size: 16px;
+      font-family: Microsoft YaHei;
+      font-weight: 400;
+      word-break: break-all;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      // white-space: pre-line  !important;
+      // line-height: 16px !important;
+    }
+
+    .el-form-item__content {
+      margin-left: 90px !important;
+    }
+  }
+
+
+}
+
+// 弹框没有form表单  只要查询条件
+.noQueryDialog{
+  // margin-bottom: 64px !important;
+  .el-dialog {
+    width: 1240px !important;
+    padding: 30px !important;
+    // margin-bottom: 64px !important;
+    .el-dialog__header {
+      padding: 0px !important;
+      padding-bottom: 30px !important;
+
+    }
+
+    .el-dialog__title {
+      font-size: 18px;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .el-dialog__body {
+      padding: 0px;
+
+    }
+
+    .el-dialog__footer {
+      padding: 0px;
+      margin-top: 30px;
+    }
+
+    .el-form-item {
+      margin-bottom: 20px;
+      .el-form-item__label:before {
+        // content: '*';
+        // color: #F56C6C;
+        // margin-right: 1px !important;
+      }
+
+      .el-form-item__label {
+        width: 76px !important;
+        padding: 0px;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        // line-height: 36px;
+        // height: 36px;
+        // white-space: pre-line !important;
+        // line-height: 16px !important;  /* 调节对齐即可，不一定是这个高度*/
+      }
+
+
+      .el-form-item__content {
+        margin-left: 10px !important;
+      }
+    }
+
+    // .el-select {
+    //   width: 100% !important;
+    // }
+
+  }
+}
+
+
+// 面试管选择 (单列显示)
+.face {
+  .el-dialog {
+    width: 600px !important;
+    padding: 30px !important;
+
+    .el-dialog__header {
+      padding: 0px !important;
+      padding-bottom: 30px !important;
+
+    }
+
+    .el-dialog__title {
+      font-size: 18px;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      color: #333333;
+
+    }
+
+    .el-dialog__body {
+      padding: 0px;
+
+    }
+
+    .el-dialog__footer {
+      padding: 0px;
+    }
+
+    .el-form-item {
+      margin-bottom: 20px;
+
+      .el-form-item__label {
+        max-width: 100px !important;
+        padding: 0px;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        // white-space: pre-line  !important;
+        // line-height: 16px !important;
+      }
+
+      .el-form-item__content {
+        margin-left: 115px !important;
+      }
+    }
+
+  }
+  }
+
+// 新增弹框 (双列显示)
+.doubleDialog {
+  // margin-bottom: 64px!important;
+  .el-dialog {
+    width: 1200px !important;
+    padding: 30px !important;
+    // margin-bottom: 64px !important;
+
+    .el-dialog__header {
+      padding: 0px !important;
+      padding-bottom: 30px !important;
+    }
+
+    .el-dialog__title {
+      font-size: 18px;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .el-dialog__body {
+      padding: 0px;
+
+    }
+
+    .el-dialog__footer {
+      padding: 0px;
+      margin-top: 30px;
+    }
+
+    .el-form-item {
+      margin-bottom: 20px;
+
+      .el-form-item__label:before {
+        // content: '*';
+        // color: #F56C6C;
+        // margin-right: 1px !important;
+      }
+
+      .el-form-item__label {
+        width: 76px !important;
+        padding: 0px;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        // line-height: 36px;
+        // height: 36px;
+        // white-space: pre-line !important;
+        // line-height: 16px !important;  /* 调节对齐即可，不一定是这个高度*/
+      }
+
+
+      .el-form-item__content {
+        margin-left: 90px !important;
+      }
+    }
+
+    // .el-select {
+    //   width: 100% !important;
+    // }
+
+  }
+}
+// 详情页面
+
+.doubleDialogEight {
+  // .doubleDialogEight div{
+  //   margin-bottom: 64px;
+  // }
+  // margin-bottom: 64px !important;
+  .el-dialog {
+    width: 1200px !important;
+    padding: 30px !important;
+    // margin-bottom: 64px !important;
+    .el-dialog__header {
+      padding: 0px !important;
+      padding-bottom: 30px !important;
+    }
+
+    .el-dialog__title {
+      font-size: 18px;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .el-dialog__body {
+      padding: 0px;
+
+    }
+
+    .el-dialog__footer {
+      padding: 0px;
+      margin-top: 30px;
+
+    }
+
+    .el-form-item {
+      margin-bottom: 20px;
+      display: flex !important;
+      justify-content: start !important;
+      .el-form-item__label:before {
+        // content: '*';
+        // color: #F56C6C;
+        margin-right: 1px !important;
+      }
+
+      .el-form-item__label {
+        display: inline-block;
+        min-width:80px  !important;
+        max-width:80px  !important;
+        padding: 0px !important;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: bold;
+        float: unset !important;
+        color: #606266;
+        vertical-align: top !important;
+        float: left;
+        // line-height: 36px;
+        // height: 36px;
+        // white-space: pre-line !important;
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        // text-align: justify;
+    // text-justify: distribute-all-lines; /*ie6-8*/
+    // text-align-last: justify; /* ie9*/
+    // -moz-text-align-last: justify; /*ff*/
+    // -webkit-text-align-last: justify; /*chrome 20+*/
+        // line-height: 16px !important;  /* 调节对齐即可，不一定是这个高度*/
+      }
+
+
+      .el-form-item__content {
+        display: inline-block !important;
+        margin-left: 20px !important;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+      }
+    }
+  }
+}
+
+// 信息变更 布局样式与详情页面一致，继承至.doubleDialogEight的样式，只调整文本显示
+.infomationDialog {
+  @extend .doubleDialogEight;
+  .el-dialog {
+    .el-form-item {
+      .el-form-item__content {
+        flex: 1 0 0;
+      }
+      .el-form-item__label {
+        display: inline-block;
+        padding: 0px !important;
+        font-weight: normal;
+        font-size: 13px;
+      }
+
+    }
+  }
+}
+//油机详情
+.oilDoubleEight{
+  @extend .doubleDialogEight;
+  .el-dialog {
+    .el-form-item {
+      .el-form-item__content {
+        flex: 1 0 0;
+      }
+      .el-form-item__label {
+        display: inline-block;
+        padding: 0px !important;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: bold;
+        float: unset !important;
+        color: #606266;
+      }
+      .el-form-item__content{
+        width: 100%;
+      }
+
+    }
+  }
+}
+
+// 暂估新增样式
+.zanDialog {
+  // margin-bottom: 64px!important;
+  .el-dialog {
+    width: 1200px !important;
+    padding: 30px !important;
+    // margin-bottom: 64px !important;
+
+    .el-dialog__header {
+      padding: 0px !important;
+      padding-bottom: 30px !important;
+    }
+
+    .el-dialog__title {
+      font-size: 18px;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .el-dialog__body {
+      padding: 0px;
+
+    }
+
+    .el-dialog__footer {
+      padding: 0px;
+      margin-top: 30px;
+    }
+
+    .el-form-item {
+      margin-bottom: 20px;
+
+      .el-form-item__label:before {
+        // content: '*';
+        // color: #F56C6C;
+        // margin-right: 1px !important;
+      }
+
+      .el-form-item__label {
+        min-width:100px !important;
+        padding: 0px;
+        font-size: 15px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        // text-align: -webkit-center;
+        text-align: right;
+        // line-height: 36px;
+        // height: 36px;
+        // white-space: pre-line !important;
+        // line-height: 16px !important;  /* 调节对齐即可，不一定是这个高度*/
+     label{
+       font-weight: 400;
+     }
+      }
+
+
+      .el-form-item__content {
+        margin-left: 110px !important;
+      }
+    }
+
+    // .el-select {
+    //   width: 100% !important;
+    // }
+
+  }
+}
+// 开票详情   label五个字段折行
+.KaiDialog {
+
+  @extend .doubleDialog;
+
+  .el-dialog {
+    .el-form-item {
+      .el-form-item__label {
+        width: 95px !important;
+        padding: 0px;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+      }
+      .el-form-item__content {
+        margin-left: 110px !important;
+      }
+    }
+  }
+}
+
+// 全局导入样式
+.incomeSTYs{
+  // margin-bottom: 20px;
+  .el-upload {
+    width: 100% !important;
+  }
+  .sty {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .upSty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 15px;
+    background-color: #ECF5FF;
+    border-radius: 4px;
+
+
+  }
+  .linkSty {
+    font-size: 15px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #333333;
+    margin-left: 10px;
+  }
+
+
+
+}
+.incomeSTY {
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  overflow: hidden;
+ margin: 10px 0px 30px;
+ .el-upload {
+  // display: inline-block;
+  text-align: unset;
+  // cursor: pointer;
+  // outline: none;
+}
+  .tipSty {
+    color: red;
+    margin-left: 145px;
+    margin-top: -10px;
+    // margin-top: 35px;
+    // margin-left: 30px;
+  }
+  .imgs {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+  .el-button {
+    height: 36px !important;
+    line-height: 20px !important;
+    padding: 5px 20px !important;
+  }
+  .disSty {
+    font-size: 16px;
+    // font-family: Microsoft YaHei;
+    font-weight: 400;
+    span {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+  }
+}
+
+//  渐变色标题样式
+.showSty {
+  width: 88px;
+  height: 24px;
+  background: linear-gradient(90deg, #7bd0f7, #11adf1);
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #fffefe;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+//  立项渐变色标题样式
+.showStys {
+  padding: 0px 20px;
+  // width: 88px;
+  height: 24px;
+  background: linear-gradient(90deg, #7bd0f7, #11adf1);
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #fffefe;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+}
+
+
+
+// .table{
+//   .el-table__body{
+//       .el-table__row{
+//   .el-table__cell{
+//     color: #606266;
+//     font-size: 14px;
+//   }
+//  }
+// }
+
+// }
+// el-table th.el-table__cell > .cell {
+
+// font-size:15px !important;
+// }
+// 暂无内容样式
+// <div v-else class="noContent">
+// <img src="@/assets/image/nothing.png" style="height:82px;width:98px" />
+//     <div>暂无内容</div>
+// </div>

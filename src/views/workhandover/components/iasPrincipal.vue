@@ -1,0 +1,228 @@
+<template>
+  <div style="height: 800px">
+    <basic-table
+        :registerTable="table"
+        ref="applyFlowTable"
+        :formSchema="schemas"
+        @node-click="handleNodeClick"
+        @selection-change="getSelectTableData"
+        :basicTableOptions="options"
+        @resetForm="resetForm"
+    >
+      <template #orgTree>
+        <el-form-item label="所属组织" clearable size="small">
+          <TreeSelect
+              ref="orgTree"
+              :defaultProps="defaultProps"
+              :props="defaultProps"
+              v-if="organizationTreeData[0]"
+              :data="organizationTreeData"
+              @getTreeValue="getTreeValue"
+          >
+
+          </TreeSelect>
+        </el-form-item>
+      </template>
+
+
+      <template #toolbarLeft>
+        <el-button type="success" :disabled="multiple" size="mini" @click="connectFun(undefined)"
+                   icon="el-icon-s-unfold">交接
+        </el-button>
+      </template>
+      <template #selectionSlot>
+        <el-table-column
+            type="selection"
+            width="55">
+        </el-table-column>
+      </template>
+
+
+      <!--列表操作按钮插槽-->
+      <template #action>
+        <el-table-column align="center" label="操作" fixed="right" width="300">
+          <template slot-scope="scope">
+            <el-button size="mini" icon="el-icon-check" @click="connectFun(scope.row)"
+                       type="text">
+              交接
+            </el-button>
+          </template>
+        </el-table-column>
+      </template>
+    </basic-table>
+    <el-dialog title="交接" :visible.sync="open" width="600px" append-to-body :destroy-on-close="true">
+      <el-form ref="form" :model="form" :rules="rules" label-width="80px">
+        <el-form-item label="交接人" prop="handoverStaffId">
+          <el-input v-show="false" v-model="form.handoverStaffId"></el-input>
+          <TreeSelectLay :jobType=9 @getTreeValue="handleNodeClick"></TreeSelectLay>
+        </el-form-item>
+        <el-form-item label="交接日期" prop="handoverDate">
+          <el-date-picker
+              style="width: 100%;"
+              v-model="form.handoverDate"
+              type="date" value-format="yyyy-MM-dd"
+              placeholder="选择日期" size="small" :editable="false">
+          </el-date-picker>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="submitForm">确 定</el-button>
+        <el-button @click="cancel">取 消</el-button>
+      </div>
+    </el-dialog>
+  </div>
+</template>
+
+<script>
+import {listOrganizationTree} from '@/api/organization/organization.js'
+import basicTable from "@/components/Table/components/index.vue"
+import TreeSelect from "@/components/Tree/components/TreeSelect.vue";
+import TreeSelectLay from "@/components/LazyTree/index.vue";
+
+// 页面表单的基本数据
+import mixinTableData from "@/views/workhandover/mixins/iasPrincipalmixins.js"
+// 数据接口
+import {editAll} from "@/api/workhandover/iasPrincipal";
+
+
+export default {
+  name: "iasPrincipal",
+  mixins: [mixinTableData], // 页面表单的基本数据 在这里
+  components: {
+    basicTable, TreeSelect, TreeSelectLay
+  },
+  props: {
+    tabValue: {
+      type: String,
+    }
+  },
+  watch: {
+    tabValue: {
+      handler(val) {
+        if (this.$refs.applyFlowTable) {
+          this.$refs.applyFlowTable.methods.doLayout();
+        }
+      },
+      deep: true
+    }
+  },
+  created() {
+    //组织树查询
+    listOrganizationTree(this.treeParams).then(response => {
+      this.organizationTreeData = response.data
+    })
+  },
+  data() {
+    return {
+      //树形结构数据中对应的属性名称，可改为自己数据中属性
+      nodeKey: 'id',
+      defaultProps: {
+        children: 'children',//树形结构数据中对应的属性名称，可改为自己数据中属性
+        label: 'label',//树形结构数据中对应的属性名称，可改为自己数据中属性
+        value: "id"
+      },
+      treeParams: {
+        recordType: 1,
+        delFlag: 0
+      },
+      //组织树形结构数据
+      organizationTreeData: [],
+      params: [],
+      selection: [],
+      // 是否显示弹出层
+      open: false,
+      // 非多个禁用
+      multiple: true,
+      ids: [],
+      form: {
+        handoverStaffId: null,
+        handoverDate: null
+      },
+      // 表单校验
+      rules: {
+        handoverStaffId: [
+          {required: true, message: "交接人必填", trigger: "blur"},
+        ],
+        handoverDate: {required: true, message: "交接日期必填", trigger: "blur"},
+      }
+    };
+  }, methods: {
+    resetForm() {
+      this.$refs.orgTree.clearTreeValue();
+      this.options.apiParams = {orgId: null};
+    },
+    getTreeValue(v) {
+      this.options.apiParams = {orgId: v}; //设置table默认查询查询
+    },
+    handleNodeClick(v) {
+      this.form.handoverStaffId = v;
+    },
+    // 多选功能
+    getSelectTableData(rows) {
+      this.ids = [];
+      this.params = [];
+      this.selection = rows;
+      rows.map(item => {
+        this.ids.push(item.staffId.toString());
+        this.params.push({
+          "staffId": item.staffId,
+          "responsibleType": item.responsibleType
+        });
+      });
+      this.multiple = !this.selection.length
+    },
+    //交接
+    connectFun(v) {
+      if (v !== undefined) {
+        this.ids = [];
+        this.ids.push(v.staffId.toString());
+        this.params.push({
+          "staffId": v.staffId,
+          "responsibleType": v.responsibleType
+        });
+      }
+      this.open = true;
+    },
+    // 表单重置
+    reset() {
+      this.form = {
+        handoverStaffId: null,
+        handoverDate: null
+      }
+    },
+    /** 提交按钮 */
+    submitForm() {
+      this.$refs["form"].validate(valid => {
+        if (valid) {
+          let data =
+              {
+                "handoverStaffId": this.form.handoverStaffId,
+                "handoverDate": this.form.handoverDate,
+                "paramsList": this.params
+              };
+          editAll(JSON.stringify(data)).then(response => {
+            this.$message({
+              message: '成功',
+              type: 'success'
+            });
+            this.$refs.applyFlowTable.handleRefresh()
+            this.reset();
+            this.open = false;
+          });
+        }
+      });
+    },
+    // 取消按钮
+    cancel() {
+      this.open = false;
+      this.reset();
+    }
+  },
+};
+</script>
+<style scoped>
+/deep/ .el-input--small .el-input__inner {
+  height: 40px;
+  line-height: 40px;
+}
+</style>

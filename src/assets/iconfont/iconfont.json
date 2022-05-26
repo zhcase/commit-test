@@ -1,0 +1,44 @@
+{
+  "id": "2646136",
+  "name": "后台管理系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "586824",
+      "name": "dashboard-24",
+      "font_class": "dashboard",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
+    },
+    {
+      "icon_id": "643737",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "7239753",
+      "name": "form",
+      "font_class": "form",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    },
+    {
+      "icon_id": "10166343",
+      "name": "nested",
+      "font_class": "nested",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "18967153",
+      "name": "example",
+      "font_class": "example",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

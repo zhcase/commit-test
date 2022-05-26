@@ -1,0 +1,30 @@
+.link-default {
+  color: $--color-text-regular !important;
+  cursor: pointer;
+  &:hover {
+    color: $--color-primary !important;
+  }
+}
+
+.link-primary {
+  color: $--color-text-primary !important;
+  cursor: pointer;
+  &:hover {
+    color: $--color-primary !important;
+  }
+}
+
+.link-highlight {
+  color: $--color-primary-light-2 !important;
+  cursor: pointer;
+  &:hover {
+    color: $--color-primary !important;
+  }
+}
+
+.link-only {
+  cursor: pointer;
+  &:hover {
+    color: $--color-primary !important;
+  }
+}
